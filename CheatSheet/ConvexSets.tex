@@ -1,0 +1,93 @@
+{\LARGE \textbf{Convex Sets}}
+
+\begin{itemize}
+
+\item \textbf{Affine set:} if $\forall \bm{x}_{1}, \bm{x}_{2} \in C$ then $\theta \bm{x}_{1}+(1-\theta) \bm{x}_{2} \in C, \forall \theta \in \mathbb{R}$
+
+ Affine combination: $\sum_{i=1}^{n} \theta_{i} \bm{x}_{i}, \rm{s.t.} \sum_{i=1}^{n} \theta_{i}=1, \theta_{i} \in \mathbb{R}$\\
+{\small
+A set $C \subseteq \mathbb{R}^{n}$ is affine if the \underline{line} through any two distinct points in $C$ lies in $C$.\\
+An affine set contains all affine combinations of points in the set.
+}
+
+\item {\small\textbf{Convex set:} if $\forall \bm{x}_{1}, \bm{x}_{2} \in C$ then $\theta \bm{x}_{1}+(1-\theta) \bm{x}_{2} \in C, \theta \in[0,1]$}
+
+ Convex combination: $\sum_{i=1}^{n} \theta_{i} \bm{x}_{i}$, s.t. $\sum_{i=1}^{n} \theta_{i}=1$, $\theta_{i} \geq 0$
+
+ Convex hull of a set $C$ is a set of all convex combinations of points in $C$.
+
+\item \textbf{Cones:} if $\forall \bm{x} \in C$ then  $\theta \bm{x} \in C$, $\forall \theta \geq 0$. 
+
+Conic combination: $\sum_{i=1}^{n} \theta_{i} \bm{x}_{i}, \theta_{i} \geq 0$
+
+\item Proving $\mathscr{P}$ is convex:
+\begin{itemize}
+    \item Pick $\bm{x}_{1} \in \mathscr{P}, \bm{x}_{2} \in \mathscr{P}$
+    \item Pick any $\theta \in[0,1]$
+    \item Test $\theta \bm{x}_{1}+(1-\theta) \bm{x}_{2}$. Is it in $\mathscr{P} ?$
+\end{itemize}
+
+\end{itemize}
+
+\underline{\textbf{Examples:}}
+
+\begin{itemize}
+
+\item \textbf{Hyperplane:}
+$\left\{\bm{x} \mid \bm{a}^{\mathrm{T}} \bm{x}=\bm{b} \right\}=\left\{\bm{x} \mid \bm{a}^{\mathrm{T}}\left(\bm{x}-\bm{x}_{0}\right)=0\right\}$\\
+$\bm{a}$ is a normal vector, $\bm{b}$ determines the offset from origin.
+
+\item \textbf{Half space:}
+$\left\{\bm{x} \mid \bm{a}^{\mathrm{T}} \bm{x} \leq \bm{b}\right\}=\left\{\bm{x} \mid \bm{a}^{\mathrm{T}}\left(\bm{x}-\bm{x}_{0}\right) \leq 0\right\} .$
+
+\item \textbf{Polyhedra:} $\{\bm{x} \mid \mathbf{A} \bm{x} \leq \bm{b}, \mathbf{C} \bm{x}=\bm{d}\}$
+
+\item \textbf{Norm ball:} $\mathcal{B}=\{\bm{x}\|\bm{x}\| \leq 1\}$, is a convex set for all norms.
+
+\item {\small \textbf{Euclidean Ball:} $\mathcal{B}\left(\bm{x}_{c}, r\right)=\left\{\bm{x} \mid\left(\bm{x}-\bm{x}_{c}\right)^{\mathrm{T}}\left(\bm{x}-\bm{x}_{c}\right) \leq r^{2}\right\}$}
+
+
+
+\item {\footnotesize\textbf{Ellipse:}
+ $\mathcal{E}\left(\bm{x}_{c}, \mathbf{P}\right)=\left\{\bm{x} \mid\left(\bm{x}-\bm{x}_{c}\right)^{\mathrm{T}} \mathbf{P}^{-1}\left(\bm{x}-\bm{x}_{c}\right) \leq 1\right\}, \mathbf{P} \in S_{++}^{n}$}
+
+\begin{itemize}
+    \item Euclidean ball is an ellipse with $\mathbf{P}=\mathbf{I}r^{2}$
+    \item Geometry. 
+    \item Use cols of $Q$.
+    \item $x = Q\tilde x + {x_c}$
+    \item Volume is proportional to $\sqrt{\operatorname{det} P}=\sqrt{\prod_{i=1}^{n} \lambda_{i}}$
+\end{itemize}
+
+\item $S_{+}^{n}$ is a convex cone.
+
+\item \textbf{Generalized inequalities:} $\bm{x} \leq_{K} \bm{y} \leftrightarrow \bm{y}-\bm{x} \in K$
+\end{itemize}
+
+\underline{\textbf{Operation that preserves convexity:}}
+
+\begin{itemize}
+
+\item \textbf{Intersection}: If $S_{\alpha}$ is (affine,convex, conic) then $\cap_{\alpha} S_{\alpha}$ is (affine,convex, conic) (perhaps infinitely many).
+
+\item \textbf{Affine map}: $\bm{f}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}, \bm{f}(\bm{x})=\mathbf{A}\bm{x+b}$. If $S$ is convex, then
+
+    -- $\bm{f}(S)=\{\bm{f}(\bm{x}) \mid \bm{x} \in S\}$ is convex, i.e., image of a convex set under affine map is convex.
+    
+    --  $\bm{f}^{-1}(S)=\{\bm{x} \mid \bm{f}(\bm{x}) \in S\}$ is convex, i.e., pre-image of ..
+
+\end{itemize}
+
+\underline{\textbf{Properties of convex sets:}}
+
+\begin{itemize}
+
+\item \textbf{Separating hyperplanes:} 
+If $S, T \subseteq \mathbb{R}^{n}$ are convex and disjoint i.e. $S \cap T=\emptyset$, then $\exists \bm{a} \in \mathbb{R}^{n},  \bm{a} \neq 0$ and $\bm{b} \in \mathbb{R}$ s.t. $\bm{a}^{\mathrm{T}} \bm{x} \geq {b}, \forall \bm{x} \in S$ and $\bm{a}^{\mathrm{T}} \bm{x} \leq {b}, \forall \bm{x} \in T$.
+
+\item \textbf{Supporting hyperplane:} If $S$ is convex then $\forall x_{0} \in \partial S$, $\exists$ $\bm{a} \neq 0 \in \mathbb{R}^{n}$ s.t. $\bm{a}^{\mathrm{T}} \bm{x} \leq \bm{a}^{\mathrm{T}} x_{0} , \forall \bm{x} \in S$
+
+
+\end{itemize}
+
+

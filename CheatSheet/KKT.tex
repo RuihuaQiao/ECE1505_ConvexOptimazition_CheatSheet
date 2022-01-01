@@ -1,0 +1,37 @@
+{\LARGE \textbf{KKT Conditions}}
+
+\begin{itemize}
+
+\item \textbf{Primal feasibility}:
+
+$
+f_{i}\left(x^{\star}\right) \leq 0, \forall i \in [m], \quad h_{i}\left(x^{\star}\right)=0, \forall i \in [p]
+$
+
+\item \textbf{Dual feasibility}:
+
+$\lambda_{i}^{\star} \geq 0,  \quad \forall i \in [m]$
+
+\item \textbf{First order condition}:
+
+$
+\nabla f_{0}\left(x^{\star}\right)+\sum_{i=1}^{m} \lambda_{i}^{\star} \nabla f_{i}\left(x^{\star}\right)+\sum_{i=1}^{p} \nu_{i}^{\star} \nabla h_{i}\left(x^{\star}\right)=0
+$
+
+\item \textbf{Complementary slackness}:
+
+$\lambda_{i}^{\star} f_{i}\left(x^{\star}\right)=0, \quad \forall i \in [m]$
+
+\end{itemize}
+
+\textbf{Theorems}
+
+\begin{itemize}
+    \item If strong duality holds, $(x^*,\lambda^*,\mu^*)$ are primal \& dual optimal, then $(x^*,\lambda^*,\mu^*)$ satisfies KKT.
+    \item For \textbf{convex} opt. problem, if $(\Tilde{x},\Tilde{\lambda},\Tilde{\mu})$ satisfies KKT, then strong duality holds and $(\Tilde{x},\Tilde{\lambda},\Tilde{\mu})$ are primal \& dual optimal.  
+    \item If problem is \underline{differentiable}, \underline{convex}, \underline{strong duality holds}, \\ 
+    $(x,\lambda,\mu)$ satisfies KKT $\Longleftrightarrow$ $(x,\lambda,\mu)$ are primal \& dual optimal. 
+\end{itemize}
+
+
+

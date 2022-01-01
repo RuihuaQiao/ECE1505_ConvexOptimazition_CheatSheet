@@ -1,0 +1,44 @@
+{\LARGE \textbf{Lagrange Method}}
+
+% \underline{\textbf{Method}}
+
+\begin{itemize}
+    \item \textbf{Primal problem}:
+    
+$\begin{array}{*{20}{l}}
+{\mathop {{\mathop{\rm minimize}\nolimits} }\limits_x }&{{f_0}(x)}\\
+{{\text{subject to }}}&{{f_i}(x) \le 0,\quad i = 1, \ldots ,m}\\
+{}&{{h_i}(x) = 0,\quad i = 1, \ldots ,p}
+\end{array}$
+    \begin{itemize}
+        \item Domain $\mathcal{D}=\bigcap_{i=0}^{m} \operatorname{dom} f_{i} \cap \bigcap_{i=1}^{p} \operatorname{dom} h_{i}$
+        \item Optimum: $x^*$, optimal value: $p^*$
+    \end{itemize}
+    
+    \item \textbf{Lagrangian}: 
+    
+    $L(x, \lambda, \nu)=f_{0}(x)+\sum_{i=1}^{m} \lambda_{i} f_{i}(x)+\sum_{i=1}^{p} \nu_{i} h_{i}(x)$,
+    
+    \item \textbf{Dual function}:
+        $g(\lambda, \nu)=\min _{x \in \mathcal{D}} L(x, \lambda, \nu)$
+    
+    \item \textbf{Dual optimization problem}:
+    
+$\begin{array}{*{20}{c}}
+{\mathop {{\mathop{\rm maximize}\nolimits} }\limits_{\lambda ,\nu } }&{g(\lambda ,\nu )}\\
+{{\text{ subject to }}}&{\lambda \succeq 0}
+\end{array}$
+    
+    \begin{itemize}
+        \item Optimum: $\lambda^*, \nu^*$, optimal value: $d^*$
+    \end{itemize}    
+
+\end{itemize}
+
+\textbf{Properties}
+
+\begin{itemize}
+    \item $g(\lambda ,\nu )$ is concave in $(\lambda ,\nu )$
+    \item $g(\lambda ,\nu ) \le g({\lambda ^*},{\nu ^*}) \le {f_0}({x^*}) \le {f_0}(x)$
+    \item Sufficient condition for strong duality: problem convex \& Slater's condition ($\exists x,{\rm{s}}{\rm{.t}}{\rm{.}}{f_i}(x) < 0,\forall i \in [m],Ax = b$) holds.
+\end{itemize}

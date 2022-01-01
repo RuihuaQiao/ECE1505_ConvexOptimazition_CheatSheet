@@ -1,0 +1,118 @@
+% Derivative
+
+{\LARGE \textbf{Derivatives}}\\
+
+{\large \underline{First Order }}
+\begin{itemize}
+
+\item $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$, $f(\boldsymbol{x}), \boldsymbol{x}=\left[x_{1}, x_{2}, \cdots, x_{n}\right]^{T}$
+
+\textbf{Gradient: } 
+$\nabla f(\bm{x})=\left[\begin{array}{c}
+\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\
+\frac{\partial f}{\partial x_n}
+\end{array}\right]$
+
+\textbf{Derivative:}
+$Df(\bm{x}) = \left[ {\frac{{\partial f}}{{\partial {x_1}}},\frac{{\partial f}}{{\partial {x_2}}}, \cdots ,\frac{{\partial f}}{{\partial {x_n}}}} \right]$
+
+\begin{itemize}
+\item \textbf{Relationship:} $\nabla f(\bm{x})=D f(\bm{x})^{T}$
+
+\item \textbf{Conclusions} (use gradient):
+
+$\frac{\partial\left(\boldsymbol{x}^{T} \boldsymbol{a}\right)}{\partial \boldsymbol{x}}=\frac{\partial\left(\boldsymbol{a}^{T} \boldsymbol{x}\right)}{\partial \boldsymbol{x}}=\boldsymbol{a}$
+
+$\frac{\partial\left(\boldsymbol{x}^{T} \boldsymbol{x}\right)}{\partial \boldsymbol{x}}=2 \boldsymbol{x}$
+
+$\frac{\partial\left(\boldsymbol{x}^{T} \mathbf{A} \boldsymbol{x}\right)}{\partial \boldsymbol{x}}=\mathbf{A} \boldsymbol{x}+\mathbf{A}^{T} \boldsymbol{x}$
+
+$\frac{\partial\left(\boldsymbol{a}^{T} \boldsymbol{x} \boldsymbol{x}^{T} \boldsymbol{b}\right)}{\partial \boldsymbol{x}}=\boldsymbol{a} \boldsymbol{b}^{T} \boldsymbol{x}+\boldsymbol{b a}^{T} \boldsymbol{x}$
+
+$\nabla_{\mathbf{A}} \operatorname{tr} (\mathbf{AB})=\mathbf{B}^{T}$
+\end{itemize}
+\end{itemize}
+
+% --------------------%
+
+\begin{itemize}
+\item $\bm{f}: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$, $\bm{f}(\boldsymbol{x}), \boldsymbol{x}=\left[x_{1}, x_{2}, \cdots, x_{n}\right]^{T}$
+
+\textbf{Derivative: Jacobian}
+\begin{align*}
+D\bm{f}({\bm{x}}) 
+&= \left[ {\begin{array}{*{20}{c}}
+{D{f_1}\left( {\bm{x}} \right)}\\
+{D{f_2}\left( {\bm{x}} \right)}\\
+ \vdots \\
+{D{f_m}\left( {\bm{x}} \right)}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+{{{\left( {\nabla {f_1}\left( {\bm{x}} \right)} \right)}^{\rm{T}}}}\\
+{{{\left( {\nabla {f_2}\left( {\bm{x}} \right)} \right)}^{\rm{T}}}}\\
+ \vdots \\
+{{{\left( {\nabla {f_m}\left( {\bm{x}} \right)} \right)}^{\rm{T}}}}
+\end{array}} \right]\\
+& = \left[ {\begin{array}{*{20}{c}}
+{\frac{{\partial {f_1}}}{{\partial {x_1}}}}&{\frac{{\partial {f_1}}}{{\partial {x_2}}}}& \cdots &{\frac{{\partial {f_1}}}{{\partial {x_n}}}}\\
+{\frac{{\partial {f_2}}}{{\partial {x_1}}}}&{\frac{{\partial {f_2}}}{{\partial {x_2}}}}& \cdots &{\frac{{\partial {f_2}}}{{\partial {x_n}}}}\\
+ \vdots & \vdots & \ddots & \vdots \\
+{\frac{{\partial {f_m}}}{{\partial {x_1}}}}&{\frac{{\partial {f_m}}}{{\partial {x_2}}}}& \cdots &{\frac{{\partial {f_m}}}{{\partial {x_n}}}}
+\end{array}} \right]    
+\end{align*}
+
+
+\textbf{Conclusions:} $D(\bm{A}\bm{x}+\bm{b})=\bm{A}$
+
+
+
+\item $\bm{F}: {S}^{n} \rightarrow \mathbb{R}$
+
+\[\nabla F({\bf{X}}) = \left[ {\begin{array}{*{20}{c}}
+{\frac{{\partial F}}{{\partial {X_{11}}}}}& \cdots &{\frac{{\partial F}}{{\partial {X_{1n}}}}}\\
+ \vdots & \ddots & \vdots \\
+{\frac{{\partial F}}{{\partial {X_{n1}}}}}& \ldots &{\frac{{\partial F}}{{\partial {X_{nn}}}}}
+\end{array}} \right]\]
+
+\textbf{Conclusions:} ${\nabla _{\bf{X}}}\left( {\log \det {\bf{X}}} \right) = {{\bf{X}}^{ - 1}}$
+
+\end{itemize}
+
+
+
+{\large \underline{Second Order}}
+
+\textbf{Hessian} (always symmetric)
+
+$f: \mathbb{R}^{n} \rightarrow \mathbb{R}$, $f(\boldsymbol{x}), \boldsymbol{x}=\left[x_{1}, x_{2}, \cdots, x_{n}\right]^{T}$
+
+\begin{align*}
+{\nabla ^2}f({\bm{x}}) 
+&= D\left[ {\nabla f({\bm{x}})} \right] = \left[ {\begin{array}{*{20}{c}}
+{D\left( {\frac{{\partial f}}{{\partial {x_1}}}} \right)}\\
+{D\left( {\frac{{\partial f}}{{\partial {x_2}}}} \right)}\\
+ \vdots \\
+{D\left( {\frac{{\partial f}}{{\partial {x_n}}}} \right)}
+\end{array}} \right]\\
+&= \left[ {\begin{array}{*{20}{c}}
+{\frac{{{\partial ^2}f}}{{\partial {x_1}\partial {x_1}}}}&{\frac{{{\partial ^2}f}}{{\partial {x_1}\partial {x_2}}}}& \cdots &{\frac{{{\partial ^2}f}}{{\partial {x_1}\partial {x_n}}}}\\
+{\frac{{{\partial ^2}f}}{{\partial {x_2}\partial {x_1}}}}&{\frac{{{\partial ^2}f}}{{\partial {x_2}\partial {x_2}}}}& \cdots &{\frac{{{\partial ^2}f}}{{\partial {x_2}\partial {x_n}}}}\\
+ \vdots & \vdots & \ddots & \vdots \\
+{\frac{{{\partial ^2}f}}{{\partial {x_n}\partial {x_1}}}}&{\frac{{{\partial ^2}f}}{{\partial {x_n}\partial {x_2}}}}& \cdots &{\frac{{{\partial ^2}f}}{{\partial {x_n}\partial {x_n}}}}
+\end{array}} \right]
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

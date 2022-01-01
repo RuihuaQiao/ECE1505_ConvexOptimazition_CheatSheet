@@ -1,0 +1,52 @@
+{\LARGE \textbf{Norm}}
+
+Norm is a mapping $\|\cdot\|: \mathbb{R}^{n} \rightarrow \mathbb{R}$.
+\begin{itemize}
+    \item Scaling: $\|t \bm{x}\|=|t|\|\bm{x}\|$
+    \item Triangle inequality: $\|\bm{x}+\bm{y}\| \leq\|\bm{x}\|+\|\bm{y}\|$
+
+\item \textbf{$l_p$ norm:}
+$\|\bm{x}\|_{p}=\left(\sum_{i=1}^{n}\left|x_{i}\right|^{p}\right)^{1 / p}$
+
+\begin{itemize}
+    \item One-norm: $\|\bm{x}\|_{1}=\sum_{i=1}^{n}\left|x_{i}\right|$
+    \item Two-norm (Euclidean Norm): $\|\bm{x}\|=\sqrt{\sum_{i=1}^{n} x_{i}^{2}}$ 
+    \item Infinity-norm: $\|\bm{x}\|_{\infty}=\max _{i=1}^{n}\left|x_{i}\right| .$
+    \item \textbf{Dual norm}:
+    $\|\bm{z}\|_{*}=\sup _{\bm{x}}\left\{\bm{z}^{\mathrm{T}} \bm{x} \mid\|\bm{x}\| \leq 1\right\}$
+\end{itemize}
+
+
+\item \textbf{Cauchy-Schwartz Inequality} $\langle\bm{x}, \bm{y}\rangle \leq\|\bm{x}\|_{2}\|\bm{y}\|_{2}$
+
+\end{itemize}
+
+% --------------------------- %
+
+
+{\LARGE \textbf{Inner Product}}
+\begin{itemize}
+
+\item \textbf{Vector}: $\langle\bm{x}, \bm{y}\rangle=\bm{x}^{\mathrm{T}} \bm{y}=\sum_{i=1}^{n} x_{i} y_{i}$
+\subitem -- Orthogonal $\Leftrightarrow$ $\langle\bm{x}, \bm{y}\rangle=0$
+
+\item \textbf{Matrix}: $\langle X, Y\rangle=\operatorname{Tr}\left(X^{\mathrm{T}} Y\right)=\sum_{i=1}^{m} \sum_{j=1}^{n} X_{i j} Y_{i j}$
+
+\item \textbf{Properties:} $f(A, B)=f(B, A)$, $f(A+B, C)=f(A, B)+f(B, C)$, $f(\gamma A, B)=\gamma f(A, B)$, $f(A, A) \geq 0$. 
+
+
+\item \textbf{Frobenius norm}:\\
+$\|X\|_{F}=\operatorname{Tr}\left(X^{\mathrm{T}} X\right)=\sqrt{\langle X, X\rangle}=\sum_{i=1}^{m} \sum_{j=1}^{n} X_{i j}^{2}$
+
+
+
+
+\end{itemize}
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+{\LARGE \textbf{SVD}}
+
+Such a decomposition is always possible:
+$A=U \Sigma V^{\mathrm{T}}$
+\begin{itemize}
+
+\item $A \in \mathbb{R}^{m \times n}$, $U \in \mathbb{R}^{m \times r}$, $V \in \mathbb{R}^{n \times r}$, $r$ is the rank of $A$.
+\item $\Sigma=\operatorname{diag}\left(\sigma_{1}, \sigma_{2}, \cdots, \sigma_{r}\right)$ where $\sigma_{1} \geq \sigma_{2} \geq \cdots \geq \sigma_{r}$
+\item $U$ and $V$ and orthogonal: $U^{\mathrm{T}} U=V^{\mathrm{T}} V=I \in \mathbb{R}^{r \times r}$
+
+\item Rotate (length i.e. 2-norm unchanged) -- scale -- rotate.
+
+\item ${\sigma _{\max }}(X) = {\max _{{{\left\| v \right\|}_2} \le 1}}{\left\| {Xv} \right\|_2}$
+\end{itemize}
+
+
+% ------------------------ %
+
+{\LARGE \textbf{Spectral Decomposition}}
+
+For symmetric matrix $A \in S^{n}$, $A=Q \Lambda Q^{\mathrm{T}}$.
+\begin{itemize}
+
+\item $Q$ is orthogonal. $\Lambda=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots \lambda_{n}\right)$, $\lambda_{i} \in \mathbb{R}, \forall i$ (real).
+    
+\item \textbf{PSD}: $A \in S_{+}^{n} \Leftrightarrow \bm{v}^{\mathrm{T}} A \bm{v} \geq 0 \quad \forall \bm{v} \in \mathbb{R}^{n}, \bm{v} \neq 0 \Leftrightarrow \lambda_{i} \geq 0$ 
+
+\item \textbf{PD}: $A \in S_{++}^{n} \Leftrightarrow \bm{v}^{\mathrm{T}} A \bm{v} > 0 \quad \forall \bm{v} \in \mathbb{R}^{n}, \bm{v} \neq 0 \Leftrightarrow \lambda_{i} > 0$ 
+
+\item $\bm{v}_i^{\mathrm{T}} A \bm{v}_i = \lambda_i$, where $\bm{v}_i, \lambda_i$ is the $i$-th eigenvec, eigenval of A.
+
+\item ${{\max _{{{\left\| v \right\|}_2} \le 1}}{v^T}Av=\lambda _{\max }}, \quad v^*$ is the eigenvec for $\lambda _{\max }$. 
+
+
+\item \textbf{Power of symmetric matrix}: $A^{k}=Q \Lambda^{k} Q^{\mathrm{T}}, k \in \mathbb{Z}$
+
+\item \textbf{Square Root}: ${A^{1/2}} = Q{\mathrm{diag}}\left[ {\sqrt {{\lambda _1}} \sqrt {{\lambda _2}}  \cdots \sqrt {{\lambda _n}} } \right]{Q^{\rm{T}}}$
+    
+\end{itemize}
+
+
+{\LARGE \textbf{Linear Algebra}}\\
+
+\textbf{Some properties of determinant:}
+
+\begin{itemize}
+
+\item A matrix $\mathbf{A}$ is non-singular (invertible) iff $\operatorname{det} \mathbf{A} \neq 0$.
+\item
+$\operatorname{det} \mathbf{A}=\prod_{n=1}^{N} \lambda_{n}$, i.e. a matrix is invertible iff $\lambda_{n} \neq 0, \vee n$.
+\item $\operatorname{det} \mathbf{A B}=\operatorname{det} \mathbf{A} \operatorname{det} \mathbf{B}=\operatorname{det} \mathbf{BA}$
+\item $\operatorname{det} \mathbf{A}^{-1}=\frac{1}{\operatorname{det} \mathbf{A}}$
+\item $\operatorname{det} \mathbf{A}^{T}=\operatorname{det} \mathbf{A}$
+\item
+$\operatorname{det} \alpha \mathbf{A}=\alpha^{N} \operatorname{det} \mathbf{A}$
+
+
+
+
+
+\end{itemize}
+
+
+\textbf{Trace}
+\begin{itemize}
+\item $\operatorname{trace}(\mathbf{A})=\sum_{n=1}^{N} \lambda_{n}$
+
+\item
+$\operatorname{tr}\left(X^{T}\right)=\operatorname{tr}(X)$\\
+$\quad \operatorname{tr}(X+Y)=\operatorname{tr}(X)+\operatorname{tr}(Y)$\\$ \quad \operatorname{tr}(\lambda X)=\lambda \operatorname{tr}(X)$
+\item $\langle A, B\rangle=\operatorname{tr}\left(B^{T} A\right)=\operatorname{tr}\left(\left(B^{T} A\right)^{T}\right)=\operatorname{tr}\left(A^{T} B\right)=\langle B, A\rangle$
+
+\end{itemize}
+
+\textbf{Inverse}
+\begin{itemize}
+    \item $AB = {B^{ - 1}}{A^{ - 1}}$ if both $A$ and $B$ are invertable.
+    \item $(I+A)^{-1} \approx I-A$ for 'small' $A$.
+    \item If $A$ is non-singular and symmetric, $A^{-1}=\left(A^{-1}\right)^{T}$
+\end{itemize}
+
+
+\textbf{Quadratic}
+
+\begin{itemize}
+
+\item $\bm{x}^{\mathrm{T}} P \bm{x}=\sum_{i, j=1}^{n} x_{i} x_{j} P_{i j}$
+
+
+\end{itemize}
+
+
+
+

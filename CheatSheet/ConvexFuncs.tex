@@ -1,0 +1,87 @@
+{\LARGE \textbf{Convex Functions}}
+
+
+\begin{itemize}
+\item If $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ is defined on a convex domain (i.e. dom $f \subseteq \mathbb{R}^{n}$ is a convex set), then $f$ is \underline{\textbf{convex}} if $\forall \bm{x}, \bm{y} \in \operatorname{dom} f, \forall \theta \in[0,1], f\left(\theta \bm{x}+(1-\theta) \bm{y}\right) \leq \theta f(\bm{x})+(1-\theta) f(\bm{y})$
+
+\item The \underline{\textbf{epigraph}} of a function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ is the \textbf{set}
+epi$f=\left\{(\bm{x}, t) \in \mathbb{R}^{n+1} \mid \bm{x} \in \operatorname{dom} f, t \geq f(\bm{x})\right\}$, where $\bm{x} \in \mathbb{R}^{n}, t \in \mathbb{R}$.
+
+-- $f$ is a convex function $\Leftrightarrow$ epi$f$ is a convex set.
+
+\item The \underline{\textbf{sublevel set}} of a function $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$ is $C(\alpha)=\{\bm{x} \in \operatorname{dom} f \mid f(\bm{x}) \leq \alpha\}$
+
+-- f is a convex function $\Rightarrow C(\alpha)$ is a convex set.
+
+-- \textbf{Quasiconvex}: all sublevel sets are convex.
+
+-- \textbf{Quasiconcave}: all superlevel sets are convex.
+
+\end{itemize}
+
+\textbf{Ways to show a function is convex}
+
+\underline{Use 1st order (differentiable)/2nd order (twice) conditions.}
+
+\begin{itemize}
+    \item $f$ convex $\Leftrightarrow$ $\operatorname{dom} f$ is a convex set and $\forall x, {x}_{0} \in \operatorname{dom} f, \\ f({x}) \geq f\left({x}_{0}\right)+\nabla f\left({x}_{0}\right)^{\mathrm{T}}\left({x}-{x}_{0}\right)$
+    \item $f$ convex $\Leftrightarrow$ $\operatorname{dom} f$ is convex, $\forall x \in \operatorname{dom} f, \nabla^2 f(x) \geq 0$
+\end{itemize}
+
+
+\underline{Reduce to scalar scenario.}
+\begin{itemize}
+    \item f is convex $\Leftrightarrow f(x_0+tv)$ is convex in $t$.
+    \item To prove $f(x)$ is convex, choose a starting point $x_0 \in \mathbb{R}^n$ and a direction $v \in \mathbb{R}^n$, and prove $g(t)=f(x_0+tv)$ is convex in $t \in \mathbb{R}$.
+\end{itemize}
+
+\underline{Use properties of operations that preserve convexity.}
+
+\begin{itemize}
+    \item \textbf{Nonnegative weighted sums}. If $f_{1}, \ldots, f_{m}$ are convex, the nonnegative weighted sum of them $f=w_{1} f_{1}+\cdots+w_{m} f_{m}$ is convex.
+    \item \textbf{Composition with an affine mapping.} Suppose $f: \mathbf{R}^{n} \rightarrow \mathbf{R}, A \in \mathbf{R}^{n \times m}$, and $b \in \mathbf{R}^{n}$. Define $g: \mathbf{R}^{m} \rightarrow \mathbf{R}$ by $g(x)=f(A x+b)$ with $\operatorname{dom} g=\{x \mid A x+b \in \operatorname{dom} f\}$. Then if $f$ is convex, so is $g$.
+    \item \textbf{Pointwise maximum.} If $f_{1}, \ldots, f_{m}$ are convex, their pointwise maximum $f(x)=\max \left\{f_{1}(x), \ldots, f_{m}(x)\right\}$ is convex.
+    \begin{itemize}
+        \item Sum of $r$ largest components of $x \in \mathbb{R}^{n}$ is a convex function. $f(x)=\sum_{i=1}^{r} x_{[i]}$. Further, if $w_{1} \geq w_{2} \geq \cdots \geq w_{r} \geq 0$, then $\sum_{i=1}^{r} w_{i} x_{[i]}$ is convex.
+    \end{itemize}
+    
+    \item \textbf{Composition.}  $f(x) = h(g(x))$
+    \begin{itemize}
+        \item $g: \mathbb{R}^{n} \rightarrow \mathbb{R}, h:\mathbb{R} \rightarrow \mathbb{R} , f$ is convex if
+        \subitem $g$ convex, $h$ convex and non-decreasing
+        \subitem $g$ concave, $h$ convex and non-increasing
+        
+        \item $g: \mathbb{R}^{n} \rightarrow \mathbb{R}^k, h:\mathbb{R}^k \rightarrow \mathbb{R},$ $f$ is convex if 
+        
+          $g_i$ is convex for all $i \in [k]$, h convex and non-decreasing in each argument
+        
+          $h(g(x)) = h\left(g_1(x), g_2(x), ..., g_k(x)\right), g_k:\mathbb{R}^n \rightarrow \mathbb{R}$. 
+        
+        
+    \end{itemize}
+    
+\end{itemize}
+
+
+{\LARGE \textbf{Optimality Conditions}}
+
+\underline{\textbf{For unconstrained problems:}
+}
+\begin{itemize}
+    \item $x^{*}$ is a local minimum of $f \Rightarrow \nabla f\left(x^{*}\right)=0$ and $\nabla^{2} f\left(x^{*}\right) \geq 0$.
+    \item $x^{*}$ is a local minimum of $f \Leftarrow \nabla f\left(x^{*}\right)=0$ and $\nabla^{2} f\left(x^{*}\right) > 0$.
+\end{itemize}
+
+
+\underline{\textbf{For constrained problems:}
+}
+
+If $f_0$ is differentiable, then \\
+  $x^*$ is optimal $\Leftrightarrow \forall y \in C, \nabla f_{0}(x^*)^{T}(y-x^*) \geq 0$ \\
+
+
+
+
+
+
+
